@@ -9,9 +9,10 @@ newQuoteButton.addEventListener('click', getQuote);
 const endpoint = 'https://api.quotable.io/random';
 
 async function getQuote() {
-  spinner.classList.remove('hidden');
- newQuoteButton.disabled = true;
+  
  try {
+    spinner.classList.remove('hidden');
+    newQuoteButton.disabled = true;
     const response = await fetch(endpoint)
     if (!response.ok) {
       throw Error(response.statusText);
